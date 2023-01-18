@@ -30,7 +30,9 @@ Attributes relating to the recursive tree-like structure of a ``DataTree``.
    DataTree.root
    DataTree.is_root
    DataTree.is_leaf
+   DataTree.leaves
    DataTree.subtree
+   DataTree.descendants
    DataTree.siblings
    DataTree.lineage
    DataTree.ancestors
@@ -97,6 +99,7 @@ For manipulating, traversing, navigating, or mapping over the tree structure.
    DataTree.find_common_ancestor
    map_over_subtree
    DataTree.pipe
+   DataTree.filter
 
 DataTree Contents
 -----------------
@@ -107,7 +110,7 @@ Manipulate the contents of all nodes in a tree simultaneously.
    :toctree: generated/
 
    DataTree.copy
-   DataTree.assign
+
    DataTree.assign_coords
    DataTree.merge
    DataTree.rename
@@ -124,6 +127,12 @@ DataTree Node Contents
 ----------------------
 
 Manipulate the contents of a single DataTree node.
+
+.. autosummary::
+   :toctree: generated/
+
+   DataTree.assign
+   DataTree.drop_nodes
 
 Comparisons
 ===========
@@ -231,7 +240,7 @@ Aggregate data in all nodes in the subtree simultaneously.
 ndarray methods
 ===============
 
-Methods copied from `np.ndarray` objects, here applying to the data in all nodes in the subtree.
+Methods copied from :py:class:`numpy.ndarray` objects, here applying to the data in all nodes in the subtree.
 
 .. autosummary::
    :toctree: generated/
@@ -309,6 +318,8 @@ Exceptions raised when manipulating trees.
    :toctree: generated/
 
    TreeIsomorphismError
+   InvalidTreeError
+   NotFoundInTreeError
 
 Advanced API
 ============
@@ -323,4 +334,5 @@ Relatively advanced API for users or developers looking to understand the intern
 
 ..
 
+   Missing:
    ``DataTree.set_close``

@@ -15,10 +15,103 @@ What's New
 
     np.random.seed(123456)
 
+.. _whats-new.v0.0.12:
+
+v0.0.12 (unreleased)
+--------------------
+
+New Features
+~~~~~~~~~~~~
+
+
+Breaking changes
+~~~~~~~~~~~~~~~~
+
+
+Deprecations
+~~~~~~~~~~~~
+
+Bug fixes
+~~~~~~~~~
+
+- Allow for altering of given dataset inside function called by :py:func:`map_over_subtree` (:issue:`188`, :pull:`194`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+
+Documentation
+~~~~~~~~~~~~~
+
+
+Internal Changes
+~~~~~~~~~~~~~~~~
+
+
+.. _whats-new.v0.0.11:
+
+v0.0.11 (01/09/2023)
+--------------------
+
+Big update with entirely new pages in the docs,
+new methods (``.drop_nodes``, ``.filter``, ``.leaves``, ``.descendants``), and bug fixes!
+
+New Features
+~~~~~~~~~~~~
+
+- Added a :py:meth:`DataTree.drop_nodes` method (:issue:`161`, :pull:`175`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- New, more specific exception types for tree-related errors (:pull:`169`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Added a new :py:meth:`DataTree.descendants` property (:pull:`170`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Added a :py:meth:`DataTree.leaves` property (:pull:`177`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Added a :py:meth:`DataTree.filter` method (:pull:`184`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+
+Breaking changes
+~~~~~~~~~~~~~~~~
+
+- :py:meth:`DataTree.copy` copy method now only copies the subtree, not the parent nodes (:pull:`171`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Grafting a subtree onto another tree now leaves name of original subtree object unchanged (:issue:`116`, :pull:`172`, :pull:`178`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Changed the :py:meth:`DataTree.assign` method to just work on the local node (:pull:`181`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+
+Deprecations
+~~~~~~~~~~~~
+
+Bug fixes
+~~~~~~~~~
+
+- Fix bug with :py:meth:`DataTree.relative_to` method (:issue:`133`, :pull:`160`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Fix links to API docs in all documentation (:pull:`183`).
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+
+Documentation
+~~~~~~~~~~~~~
+
+- Changed docs theme to match xarray's main documentation. (:pull:`173`)
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Added ``Terminology`` page. (:pull:`174`)
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Added page on ``Working with Hierarchical Data`` (:pull:`179`)
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Added context content to ``Index`` page (:pull:`182`)
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+- Updated the README (:pull:`187`)
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+
+Internal Changes
+~~~~~~~~~~~~~~~~
+
+
 .. _whats-new.v0.0.10:
 
-v0.0.10 (unreleased)
--------------------
+v0.0.10 (12/07/2022)
+--------------------
+
+Adds accessors and a `.pipe()` method.
 
 New Features
 ~~~~~~~~~~~~
@@ -37,11 +130,21 @@ Deprecations
 Bug fixes
 ~~~~~~~~~
 
+- Allow ``Datatree`` objects as values in :py:meth:`DataTree.from_dict` (:pull:`159`).
+  By `Justus Magin <https://github.com/keewis>`_.
+
 Documentation
 ~~~~~~~~~~~~~
 
+- Added ``Reading and Writing Files`` page. (:pull:`158`)
+  By `Tom Nicholas <https://github.com/TomNicholas>`_.
+
 Internal Changes
 ~~~~~~~~~~~~~~~~
+
+- Avoid reading from same file twice with fsspec3 (:pull:`130`)
+  By `William Roberts <https://github.com/wroberts4>`_.
+
 
 .. _whats-new.v0.0.9:
 
